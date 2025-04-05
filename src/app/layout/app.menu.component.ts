@@ -15,9 +15,61 @@ export class AppMenuComponent implements OnInit {
     ngOnInit() {
         this.model = [
             {
-                label: 'Home',
+                label: 'Modulo Principal',
                 items: [
-                    { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }
+                    { label: 'Inicio', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
+                    { label: 'Resumen Ejecutivo', icon: 'pi pi-fw pi-home', routerLink: ['/dashboard'] }
+                ]
+            },
+            {
+                label: 'Ventas',
+                items: [
+                    { label: 'Cotizaciones', icon: 'pi pi-file-edit', routerLink: ['/sales/quotations'] },
+                    { label: 'Pedidos', icon: 'pi pi-shopping-cart', routerLink: ['/sales/orders'] },
+                    { label: 'Clientes', icon: 'pi pi-users', routerLink: ['/sales/customers'] },
+                    { label: 'Facturación', icon: 'pi pi-file', routerLink: ['/sales/billing'] }
+                ]
+            },
+            {
+                label: 'Compras',
+                items: [
+                    { label: 'Órdenes de Compra', icon: 'ppi pi-shopping-cart', routerLink: ['/compras/ordenes'] },
+                    { label: 'Proveedores', icon: 'pi pi-briefcase', routerLink: ['/compras/proveedores'] },
+                    { label: 'Recepciones', icon: 'pi pi-truck', routerLink: ['/compras/recepciones'] }
+                ]
+            },
+            {
+                label: 'Inventario',
+                items: [
+                    { label: 'Productos', icon: 'pi pi-box', routerLink: ['/inventario/productos'] },
+                    { label: 'Categorías', icon: 'pi pi-tags', routerLink: ['/inventario/categorias'] },
+                    { label: 'Ajustes de Inventario', icon: 'pi pi-sliders-h', routerLink: ['/inventario/ajustes'] },
+                    { label: 'Kardex', icon: 'pi pi-database', routerLink: ['/inventario/kardex'] }
+                ]
+            },
+            {
+                label: 'Finanzas',
+                items: [
+                    { label: 'Cuentas por Cobrar', icon: 'pi pi-dollar', routerLink: ['/finanzas/cxc'] },
+                    { label: 'Cuentas por Pagar', icon: 'pi pi-credit-card', routerLink: ['/finanzas/cxp'] },
+                    { label: 'Movimientos Bancarios', icon: 'pi pi-wallet', routerLink: ['/finanzas/bancos'] },
+                    { label: 'Reportes Financieros', icon: 'pi pi-chart-bar', routerLink: ['/finanzas/reportes'] }
+                ]
+            },
+            {
+                label: 'Recursos Humanos',
+                items: [
+                    { label: 'Empleados', icon: 'pi pi-id-card', routerLink: ['/rh/empleados'] },
+                    { label: 'Nómina', icon: 'pi pi-money-bill', routerLink: ['/rh/nomina'] },
+                    { label: 'Asistencias', icon: 'pi pi-calendar', routerLink: ['/rh/asistencias'] }
+                ]
+            },
+            {
+                label: 'Configuración',
+                items: [
+                    { label: 'Usuarios', icon: 'pi pi-user-edit', routerLink: ['/configuracion/usuarios'] },
+                    { label: 'Roles y Permisos', icon: 'pi pi-shield', routerLink: ['/configuracion/roles'] },
+                    { label: 'Parámetros del Sistema', icon: 'pi pi-cog', routerLink: ['/configuracion/sistema'] }
                 ]
             },
             {
@@ -39,20 +91,6 @@ export class AppMenuComponent implements OnInit {
                     { label: 'File', icon: 'pi pi-fw pi-file', routerLink: ['/uikit/file'] },
                     { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/uikit/charts'] },
                     { label: 'Misc', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/misc'] }
-                ]
-            },
-            {
-                label: 'Prime Blocks',
-                items: [
-                    { label: 'Free Blocks', icon: 'pi pi-fw pi-eye', routerLink: ['/blocks'], badge: 'NEW' },
-                    { label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: ['https://www.primefaces.org/primeblocks-ng'], target: '_blank' },
-                ]
-            },
-            {
-                label: 'Utilities',
-                items: [
-                    { label: 'PrimeIcons', icon: 'pi pi-fw pi-prime', routerLink: ['/utilities/icons'] },
-                    { label: 'PrimeFlex', icon: 'pi pi-fw pi-desktop', url: ['https://www.primefaces.org/primeflex/'], target: '_blank' },
                 ]
             },
             {
@@ -105,59 +143,6 @@ export class AppMenuComponent implements OnInit {
                         icon: 'pi pi-fw pi-circle-off',
                         routerLink: ['/pages/empty']
                     },
-                ]
-            },
-            {
-                label: 'Hierarchy',
-                items: [
-                    {
-                        label: 'Submenu 1', icon: 'pi pi-fw pi-bookmark',
-                        items: [
-                            {
-                                label: 'Submenu 1.1', icon: 'pi pi-fw pi-bookmark',
-                                items: [
-                                    { label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-bookmark' },
-                                    { label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-bookmark' },
-                                    { label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-bookmark' },
-                                ]
-                            },
-                            {
-                                label: 'Submenu 1.2', icon: 'pi pi-fw pi-bookmark',
-                                items: [
-                                    { label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }
-                                ]
-                            },
-                        ]
-                    },
-                    {
-                        label: 'Submenu 2', icon: 'pi pi-fw pi-bookmark',
-                        items: [
-                            {
-                                label: 'Submenu 2.1', icon: 'pi pi-fw pi-bookmark',
-                                items: [
-                                    { label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-bookmark' },
-                                    { label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-bookmark' },
-                                ]
-                            },
-                            {
-                                label: 'Submenu 2.2', icon: 'pi pi-fw pi-bookmark',
-                                items: [
-                                    { label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-bookmark' },
-                                ]
-                            },
-                        ]
-                    }
-                ]
-            },
-            {
-                label: 'Get Started',
-                items: [
-                    {
-                        label: 'Documentation', icon: 'pi pi-fw pi-question', routerLink: ['/documentation']
-                    },
-                    {
-                        label: 'View Source', icon: 'pi pi-fw pi-search', url: ['https://github.com/primefaces/sakai-ng'], target: '_blank'
-                    }
                 ]
             }
         ];

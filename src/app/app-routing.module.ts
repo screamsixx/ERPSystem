@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { NotfoundComponent } from './demo/components/notfound/notfound.component';
 import { AppLayoutComponent } from "./layout/app.layout.component";
 
+
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -11,6 +12,9 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
                 children: [
                     { path: '', loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule) },
                     { path: 'dashboard', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule) },
+                    //Modulo ventas
+                    { path: 'sales', loadChildren: () => import('./demo/components/sales/sales.module').then(m => m.SalesModule) },
+
                     { path: 'pages', loadChildren: () => import('./demo/components/pages/pages.module').then(m => m.PagesModule) }
                 ]
             },
